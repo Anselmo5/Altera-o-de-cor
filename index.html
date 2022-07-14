@@ -2,16 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Alteração</title> <link rel="stylesheet" href="./css/estilho.css">
+    <title>Teste</title>
+    <link rel="stylesheet" href="./css/estilho.css">
 </head>
 <body>
-    <div class="box">
-    <button class="vermelho" id="btn-vermelho" onclick="alterar" > Vermelho</button>
-    <button class="azul" id="btn-azul" onclick="alterar"> Azul</button>
-    <button class="verde" id="btn-verde" onclick="alterar"> Verde</button >
+    <div class="container"> 
+        <h1>TESTE ALTERAÇÃO DE COR</h1>
+        <button id="ALTERE" onclick="setTheme()" >ALTERE</button>
     </div>
-<script src="./js/script.js"></script>
+
+    <div class="bo">
+
+    </div>
+    <script>
+        function set(){
+            document.body.className = localStorage.getItem('theme');
+        }
+        function setTheme(){    
+            let a = localStorage.getItem('theme');
+
+            if(a){
+                if(a === "theme-light"){
+                    localStorage.setItem('theme','theme-blue','theme-ligth');
+                } else {
+                    localStorage.setItem('theme', 'theme-light','theme-blue');
+                }
+                set();
+            } else {
+                localStorage.setItem('theme', 'theme-light','theme-blue');
+                set();
+            }
+    }
+
+
+
+    
+    </script>
 </body>
+
+
 </html>
